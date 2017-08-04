@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftBotApp", "MicrosoftBotApp\MicrosoftBotApp.csproj", "{EE46F7ED-8DAE-4262-868A-751466A6A993}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{02B4A6DF-CCB4-44D4-8641-B4FB6720B6FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftBotAppTests", "MicrosoftBotAppTests\MicrosoftBotAppTests.csproj", "{578552A4-849C-4BFF-B270-FB2692206280}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EE46F7ED-8DAE-4262-868A-751466A6A993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE46F7ED-8DAE-4262-868A-751466A6A993}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE46F7ED-8DAE-4262-868A-751466A6A993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B4A6DF-CCB4-44D4-8641-B4FB6720B6FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B4A6DF-CCB4-44D4-8641-B4FB6720B6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B4A6DF-CCB4-44D4-8641-B4FB6720B6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B4A6DF-CCB4-44D4-8641-B4FB6720B6FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578552A4-849C-4BFF-B270-FB2692206280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578552A4-849C-4BFF-B270-FB2692206280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578552A4-849C-4BFF-B270-FB2692206280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578552A4-849C-4BFF-B270-FB2692206280}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  microsoftbotapp:
+    image: microsoftbotapp
+    build:
+      context: .\MicrosoftBotApp
+      dockerfile: Dockerfile
