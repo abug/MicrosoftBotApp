@@ -1,31 +1,40 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MicrosoftBotApp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
-using Microsoft.Bot.Connector;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MicrosoftBotApp.Dialogs;
+using MicrosoftBotAppTests.Base;
 
-namespace MicrosoftBotApp.Tests
+namespace MicrosoftBotAppTests.Controllers
 {
     [TestClass]
-    public class MessagesControllerTests
+    public class MessagesControllerTests : DialogTestBase
     {
         [TestMethod]
-        public void PostTest()
+        public async Task MessagesCountTest()
         {
-            var controller = new MessagesController
+            //Arrange
+            var toBot = MakeTestMessage();
+            toBot.From.Id = Guid.NewGuid().ToString();
+            toBot.Text = "Hello, world!";
+
+            var rootDialog = new RootDialog();
+
+            IDialog<object> Root() => rootDialog;
+
+            using (new FiberTestBase.ResolveMoqAssembly(rootDialog))
+            using (var container = Build(Options.MockConnectorFactory | Options.ScopedQueue, rootDialog))
             {
-                Request = new HttpRequestMessage()
-            };
+                //Act
+                var toUser = await GetResponse(container, Root, toBot);
 
-            Activity activity = new Activity();
-
-            var result = controller.Post(activity).Result;
-
-            Assert.Fail("Sample assert.");
+                //Assert
+                Assert.IsNotNull(toUser);
+                Assert.IsTrue(toUser.Text.Contains(toBot.Text.Length.ToString()));
+            }
         }
+
+        
     }
+
 }
