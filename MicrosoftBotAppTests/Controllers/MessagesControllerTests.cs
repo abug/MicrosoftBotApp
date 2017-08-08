@@ -33,8 +33,5 @@ namespace MicrosoftBotAppTests.Controllers
                 Assert.IsTrue(toUser.Text.Contains(toBot.Text.Length.ToString()));
             }
         }
-
-        
     }
-
 }
